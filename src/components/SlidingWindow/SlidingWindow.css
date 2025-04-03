@@ -1,0 +1,137 @@
+.sliding-window-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 40px;
+}
+
+.visualization-container {
+  width: 50%;
+  text-align: center;
+}
+
+.code-container {
+  width: 50%;
+  background: #f4f4f4;
+  padding: 25px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95em;
+  overflow-y: auto;
+  max-height: 400px;
+  text-align: left;
+  position: relative;
+}
+
+.language-buttons button,
+.speed-buttons button,
+.play-buttons button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.array-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.array-box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 2px solid #333;
+  margin: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  background: #fff;
+  transition: background 0.3s ease;
+}
+
+/* Highlight the current window boxes */
+.window-active {
+  background: #3498db;
+  color: #fff;
+}
+
+.snippet-buttonsW {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  margin-left: -50px;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* line-height: 1.5; */
+}
+
+.snippet-buttonsW button {
+  width: 40px; /* Fixed size */
+  height: 40px; /* Fixed size */
+
+  font-size: 0.9em;
+  background-color: #efeeee;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snippet-buttonsW button:hover {
+  background-color: #cfcfcf;
+}
+.snippet-buttonsW button.locked {
+  background-color: #a0a0a0; /* Locked color */
+  cursor: not-allowed;
+}
+
+.input-container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 90%; /* Increased width */
+  /* Adjusted max width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.height-inputW1 {
+  flex: 1;
+  width: 100%; /* Ensures it takes the full width of the parent */
+  min-width: 200px; /* Ensures it is not too small */
+  max-width: 500px; /* Prevents it from getting too big */
+
+  font-size: 1.1em;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW1:focus {
+  border-color: #007bff;
+}
+.height-inputW2 {
+  flex: 1;
+  width: 100%; /* Ensures it takes the full width of the parent */
+  min-width: 50px; /* Ensures it is not too small */
+  max-width: 50px; /* Prevents it from getting too big */
+
+  font-size: 1.1em;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW2:focus {
+  border-color: #007bff;
+}

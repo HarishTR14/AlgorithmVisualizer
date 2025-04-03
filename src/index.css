@@ -1,0 +1,390 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --color: #ebebeb;
+  background-color: #f6f6f6;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      var(--color) 25%,
+      var(--color) 26%,
+      transparent 27%,
+      transparent 74%,
+      var(--color) 75%,
+      var(--color) 76%,
+      transparent 77%,
+      transparent
+    );
+  background-size: 55px 55px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  text-align: center;
+}
+
+button {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #d4d4d4;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  border-width: 2px;
+  border-color: #f6f6f6;
+}
+
+button:hover {
+  border-color: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+    border-radius: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  .code-container {
+    width: 95%;
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+.two-pointer-container,
+.recursion-container,
+.dp-container,
+.sliding-window-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 768px) {
+  .two-pointer-container,
+  .recursion-container,
+  .dp-container,
+  .sliding-window-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .visualization-container,
+  .code-container {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
+
+/* Visualization container */
+.visualization-container {
+  width: 50%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Code container */
+.code-container {
+  width: 45%;
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.95em;
+  overflow-y: auto;
+  max-height: 400px;
+  text-align: left;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Make pre element responsive */
+.code-container pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+
+/* Responsive headings */
+h2 {
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+p {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+}
+
+/* Language buttons styling */
+.snippet-buttonsLanguage {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  gap: 5px;
+}
+
+.snippet-buttonsLanguage button {
+  margin: 3px;
+  padding: 5px 10px;
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  background-color: #efeeee;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 25px;
+}
+
+.snippet-buttonsLanguage button:hover {
+  background-color: #cfcfcf;
+}
+
+/* Control buttons */
+.snippet-buttonsW {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  gap: 10px;
+}
+
+.snippet-buttonsW button {
+  width: clamp(30px, 8vw, 40px);
+  height: clamp(30px, 8vw, 40px);
+  font-size: clamp(0.7rem, 2vw, 0.9rem);
+  background-color: #efeeee;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snippet-buttonsW button:hover {
+  background-color: #cfcfcf;
+}
+
+.snippet-buttons button.locked {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Array display - responsive */
+.array-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.array-box {
+  position: relative;
+  width: clamp(30px, 8vw, 60px);
+  height: clamp(30px, 8vw, 60px);
+  border: 2px solid #333;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(0.8rem, 3vw, 1.2rem);
+}
+
+/* Window active state */
+.window-active {
+  background-color: #e6f7ff;
+  border-color: #1890ff;
+}
+
+/* Pointer styles */
+.pointer {
+  position: absolute;
+  top: -25px;
+  background: #f59700;
+  color: white;
+  padding: 2px 6px;
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
+}
+
+.left-pointer {
+  left: 5px;
+  background: #ffaf2f;
+}
+
+.right-pointer {
+  right: 5px;
+  background: #515eea;
+}
+
+/* Code line styling */
+.code-line {
+  padding: 2px 5px;
+  font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+}
+
+/* Highlighted code line */
+.highlight {
+  background-color: #ffeaa7;
+}
+
+/* Headings */
+.codeSnippetH2 {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: clamp(1.1rem, 3.5vw, 1.3rem);
+}
+
+.codeSnippetH3 {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* Controls and speed container */
+.controls-speed-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+@media (max-width: 480px) {
+  .controls-speed-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px auto;
+  width: 100%;
+  max-width: 900px;
+}
+
+@media (max-width: 480px) {
+  .input-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Input fields */
+.height-inputW1 {
+  flex: 3;
+  min-width: 120px;
+  padding: 8px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW2 {
+  flex: 1;
+  min-width: 60px;
+  padding: 8px;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW1:focus,
+.height-inputW2:focus {
+  border-color: #007bff;
+}
+
+/* Update button */
+.update-button {
+  padding: clamp(10px, 3vw, 20px);
+  margin: 5px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  background-color: #e8e8e8;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.update-button:hover {
+  background-color: #c0c0c0;
+}

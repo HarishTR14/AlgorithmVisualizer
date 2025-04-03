@@ -1,0 +1,156 @@
+.recursion-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.visualization-container {
+  width: 50%;
+  padding-right: 10px;
+}
+
+.code-container {
+  width: 50%;
+  background: #f4f4f4;
+  padding: 40px;
+  border: 1px solid #ddd;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.9em;
+  overflow-y: auto;
+  max-height: 500px;
+}
+
+.controls-container {
+  margin-top: 20px;
+}
+
+.language-buttons button {
+  margin-right: 5px;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  cursor: pointer;
+}
+
+.input-container {
+  margin-bottom: 20px;
+}
+
+.input-container input {
+  padding: 8px;
+  font-size: 16px;
+  width: 60px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.input-container button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.speed-controls {
+  margin-bottom: 20px;
+}
+
+.steps-container {
+  background: #f7f7f7;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.steps-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.steps-container li {
+  font-size: 18px;
+  padding: 5px;
+  transition: background 0.3s;
+}
+
+/* Highlight the current step in the visualization area */
+.highlight {
+  background-color: #ffeb3b;
+  font-weight: bold;
+}
+
+/* Highlight the recursive block in the sample code area */
+.recursive-highlight {
+  background-color: #ffeb3b;
+  font-weight: bold;
+  border-left: 4px solid #f39c12;
+  padding-left: 5px;
+}
+
+.code-line {
+  padding: 2px 5px;
+}
+
+.snippet-buttonsR {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  /* margin-left:0px; */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* line-height: 1.5; */
+}
+
+.snippet-buttonsR button {
+  width: 40px; /* Fixed size */
+  height: 40px; /* Fixed size */
+
+  font-size: 0.9em;
+  background-color: #efeeee;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border-radius: 50%; /* Circular shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.snippet-buttonsR button:hover {
+  background-color: #cfcfcf;
+}
+.snippet-buttonsR button.locked {
+  background-color: #a0a0a0; /* Locked color */
+  cursor: not-allowed;
+}
+.height-inputW1 {
+  flex: 1;
+  width: 100%; /* Ensures it takes the full width of the parent */
+  min-width: 200px; /* Ensures it is not too small */
+  max-width: 500px; /* Prevents it from getting too big */
+
+  font-size: 1.1em;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW1:focus {
+  border-color: #007bff;
+}
+.height-inputW2 {
+  flex: 1;
+  width: 100%; /* Ensures it takes the full width of the parent */
+  min-width: 50px; /* Ensures it is not too small */
+  max-width: 50px; /* Prevents it from getting too big */
+
+  font-size: 1.1em;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  outline: none;
+  transition: border 0.3s ease-in-out;
+}
+
+.height-inputW2:focus {
+  border-color: #007bff;
+}
