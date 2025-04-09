@@ -2,15 +2,17 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --color: #ebebeb;
+}
+
+/* Light mode (default) styles */
+:root {
+  color: #213547;
   background-color: #f6f6f6;
+  --color: #ebebeb;
   background-image: linear-gradient(
       0deg,
       transparent 24%,
@@ -38,14 +40,62 @@
   background-size: 55px 55px;
 }
 
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    --color: #333333;
+    background-image: linear-gradient(
+        0deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      ),
+      linear-gradient(
+        90deg,
+        transparent 24%,
+        var(--color) 25%,
+        var(--color) 26%,
+        transparent 27%,
+        transparent 74%,
+        var(--color) 75%,
+        var(--color) 76%,
+        transparent 77%,
+        transparent
+      );
+  }
+}
+
 a {
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
+}
+
+/* Light mode link colors */
+a {
+  color: #646cff;
 }
 
 a:hover {
   color: #535bf2;
+}
+
+/* Dark mode link colors */
+@media (prefers-color-scheme: dark) {
+  a {
+    color: #9499ff;
+  }
+
+  a:hover {
+    color: #a8aeff;
+  }
 }
 
 body {
@@ -65,43 +115,36 @@ h1 {
   text-align: center;
 }
 
+/* Button styles for light mode */
 button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #d4d4d4;
+  background-color: #f9f9f9;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: border-color 0.25s, background-color 0.25s;
   border-width: 2px;
-  border-color: #f6f6f6;
+  border-color: #e0e0e0;
+  border-radius: 14px;
 }
 
 button:hover {
-  border-color: #ffffff;
+  border-color: #d0d0d0;
+  background-color: #eaeaea;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-    border-radius: 14px;
-  }
-}
-
+/* Button styles for dark mode */
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  button {
+    background-color: #333333;
+    border-color: #4a4a4a;
+    color: rgba(255, 255, 255, 0.87);
   }
 
-  button {
-    background-color: #f9f9f9;
-    border-radius: 14px;
+  button:hover {
+    border-color: #5a5a5a;
+    background-color: #444444;
   }
 }
 
@@ -158,7 +201,7 @@ button:hover {
   box-sizing: border-box;
 }
 
-/* Code container */
+/* Code container - light mode */
 .code-container {
   width: 45%;
   background: #f4f4f4;
@@ -172,6 +215,15 @@ button:hover {
   text-align: left;
   position: relative;
   box-sizing: border-box;
+}
+
+/* Code container - dark mode */
+@media (prefers-color-scheme: dark) {
+  .code-container {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: #e0e0e0;
+  }
 }
 
 /* Make pre element responsive */
@@ -190,7 +242,7 @@ p {
   font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
-/* Language buttons styling */
+/* Language buttons styling - light mode */
 .snippet-buttonsLanguage {
   display: flex;
   justify-content: start;
@@ -215,7 +267,19 @@ p {
   background-color: #cfcfcf;
 }
 
-/* Control buttons */
+/* Language buttons styling - dark mode */
+@media (prefers-color-scheme: dark) {
+  .snippet-buttonsLanguage button {
+    background-color: #3a3a3a;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .snippet-buttonsLanguage button:hover {
+    background-color: #4a4a4a;
+  }
+}
+
+/* Control buttons - light mode */
 .snippet-buttonsW {
   display: flex;
   justify-content: flex-start;
@@ -243,9 +307,27 @@ p {
   background-color: #cfcfcf;
 }
 
+/* Control buttons - dark mode */
+@media (prefers-color-scheme: dark) {
+  .snippet-buttonsW button {
+    background-color: #3a3a3a;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .snippet-buttonsW button:hover {
+    background-color: #4a4a4a;
+  }
+}
+
 .snippet-buttons button.locked {
   background-color: #a0a0a0;
   cursor: not-allowed;
+}
+
+@media (prefers-color-scheme: dark) {
+  .snippet-buttons button.locked {
+    background-color: #555555;
+  }
 }
 
 /* Array display - responsive */
@@ -256,6 +338,7 @@ p {
   margin: 20px 0;
 }
 
+/* Array box - light mode */
 .array-box {
   position: relative;
   width: clamp(30px, 8vw, 60px);
@@ -268,17 +351,32 @@ p {
   font-size: clamp(0.8rem, 3vw, 1.2rem);
 }
 
-/* Window active state */
+/* Array box - dark mode */
+@media (prefers-color-scheme: dark) {
+  .array-box {
+    border: 2px solid #ccc;
+    color: rgba(255, 255, 255, 0.87);
+  }
+}
+
+/* Window active state - light mode */
 .window-active {
   background-color: #e6f7ff;
   border-color: #1890ff;
+}
+
+/* Window active state - dark mode */
+@media (prefers-color-scheme: dark) {
+  .window-active {
+    background-color: #003a6d;
+    border-color: #1890ff;
+  }
 }
 
 /* Pointer styles */
 .pointer {
   position: absolute;
   top: -25px;
-  background: #f59700;
   color: white;
   padding: 2px 6px;
   font-size: clamp(0.6rem, 2vw, 0.8rem);
@@ -294,15 +392,29 @@ p {
   background: #515eea;
 }
 
-/* Code line styling */
+/* Code line styling - light mode */
 .code-line {
   padding: 2px 5px;
   font-size: clamp(0.8rem, 2.5vw, 0.95rem);
 }
 
-/* Highlighted code line */
+/* Code line styling - dark mode */
+@media (prefers-color-scheme: dark) {
+  .code-line {
+    color: #e0e0e0;
+  }
+}
+
+/* Highlighted code line - light mode */
 .highlight {
   background-color: #ffeaa7;
+}
+
+/* Highlighted code line - dark mode */
+@media (prefers-color-scheme: dark) {
+  .highlight {
+    background-color: #665c00;
+  }
 }
 
 /* Headings */
@@ -356,8 +468,9 @@ p {
   }
 }
 
-/* Input fields */
-.height-inputW1 {
+/* Input fields - light mode */
+.height-inputW1,
+.height-inputW2 {
   flex: 3;
   min-width: 120px;
   padding: 8px;
@@ -365,18 +478,15 @@ p {
   border: 2px solid #ccc;
   border-radius: 25px;
   outline: none;
-  transition: border 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+  background-color: white;
+  color: #333;
 }
 
 .height-inputW2 {
   flex: 1;
   min-width: 60px;
-  padding: 8px;
-  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  border: 2px solid #ccc;
-  border-radius: 25px;
-  outline: none;
-  transition: border 0.3s ease-in-out;
 }
 
 .height-inputW1:focus,
@@ -384,7 +494,22 @@ p {
   border-color: #007bff;
 }
 
-/* Update button */
+/* Input fields - dark mode */
+@media (prefers-color-scheme: dark) {
+  .height-inputW1,
+  .height-inputW2 {
+    background-color: #333333;
+    color: rgba(255, 255, 255, 0.87);
+    border-color: #555;
+  }
+
+  .height-inputW1:focus,
+  .height-inputW2:focus {
+    border-color: #3a90ff;
+  }
+}
+
+/* Update button - light mode */
 .update-button {
   padding: clamp(10px, 3vw, 20px);
   margin: 5px;
@@ -399,4 +524,16 @@ p {
 
 .update-button:hover {
   background-color: #c0c0c0;
+}
+
+/* Update button - dark mode */
+@media (prefers-color-scheme: dark) {
+  .update-button {
+    background-color: #444444;
+    color: rgba(255, 255, 255, 0.87);
+  }
+
+  .update-button:hover {
+    background-color: #555555;
+  }
 }

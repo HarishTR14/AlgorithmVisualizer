@@ -54,7 +54,7 @@
   display: flex;
   justify-content: start;
   align-items: start;
-  margin-left: -150px;
+  margin-left: -100px;
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   /* line-height: 1.5; */
   gap: 10px;
